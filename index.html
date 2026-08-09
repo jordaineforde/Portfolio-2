@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Allows website to have a responsive design on phones/tablets/older screens (https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag)-->
+	<title>Portfolio</title>
+	<link rel="stylesheet" type="text/css" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Product+Sans&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="home-container">
+        <div class="home-left">
+             <p>Hi my name is</p>
+            <h1>Jordaine Forde</h1>
+            <p>I'm a first-year computing student at the University of Greenwich, marketing enthusiast and blog writer. I have a passion for film and creative media which is the vehicle that drives me to create engaging digital spaces. During my journey at university, I will be exploring software engineering, data analytics, intelligence and AI - of which my goal is to master one at a professional level.</p>
+         <img src="keyboard.png" alt="Drawing of a computer keyboard" class="keyboard"> <!--Drawn image of a computer keyboard and mouse Author - (Image by TheSartStudios from Pixabay https://pixabay.com/vectors/search/keyboard/)-->
+        </div>   
+        <div class="home-right">
+          <div class="monitor">
+            <div class="screen">
+                 <div class="tabs"> <!--Faux Google Tab Strip - each tab links to a different page(https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-*)  -->
+                        <a href="index.html" class="tab active" data-page="index">Home</a>
+                        <a href="lab_projects.html" class="tab" data-page="lab projects">Projects</a>
+                        <a href="contact.html" class="tab" data-page="contact">Contact</a>
+                        <a href="about_me.html" class="tab" data-page="about me">About Me</a>
+                        <a href="my_cv.html" class="tab" data-page="my cv">My CV</a>
+                    </div>
+                     <div class="screen-content"> <!-- adds the google search bar, portfolio logo(google style), button and search result-->
+                        <div id="google-bar" class="google-bar"> <!-- Google Seach Bar - uses basic HTML elements(https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input) -->
+                           <div class="portfolio-logo">
+ <span class="logo-blue">P</span>
+    <span class="logo-red">o</span>
+    <span class="logo-yellow">r</span>
+    <span class="logo-blue">t</span>
+    <span class="logo-green">f</span>
+    <span class="logo-red">o</span>
+    <span class="logo-blue">l</span>
+    <span class="logo-yellow">i</span>
+    <span class="logo-green">o</span>
+
+                         </div>
+                            <div class="google-search"> <!--Google Search Bar - allows user to search portfolio using keywords(like a search engine) -->
+                                <input type="text" id="searchInput" autocomplete="off" placeholder="What would you like to know about me?"> <!--Search input - allows user to enter keywords(Autocomplete waas removed so there is no white autosuggestion box in the search bar) (https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/text) -->
+                                <button id="searchBtn">🔍</button>
+                            </div>
+                            <div id="search-results"></div> <!--Search Results will be displayed here using JavaScript-->
+                                    </div>
+                                     <div id="hover-preview"></div>
+                    </div>
+                    </div>
+                    <div class="stand"></div>
+                    <div class="base"></div>
+                </div>
+                </div>
+                        </div>
+   </div>
+   <!--JavaScript code is in its own separate file (https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script)-->
+   <script src="script.js"></script>
+           
+           
+</body>
+</html>
