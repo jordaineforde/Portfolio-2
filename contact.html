@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Contact | Jordaine Forde</title>
+	<!-- Universal stylesheet -->
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+<!-- Contact page  -->
+	<div class="tab-window">
+<!--Navigation tabs -->
+		<div class="page-tabs">
+			<a href="index.html" class="tabs">Home</a>
+			<a href="lab_projects.html" class="tabs">Projects</a>
+			<a href="contact.html" class="tabs active">Contact</a>
+			<a href="about_me.html" class="tabs">About Me</a>
+			<a href="my_cv.html" class="tabs">My CV</a>
+		</div>
+		<!--Address bar to reflect computer theme-->
+		<div class="url-bar">
+			<span class="url">www.jordaineforde.com/contact</span>
+		</div>
+		<!--Contact form input fields-->
+		<div class="screen-page">
+			<h1 class="page-heading">Contact</h1>
+			<!--2 column layout (https://css-tricks.com/snippets/css/complete-guide-grid/)-->
+			<div class="page-layout">
+				<!--Left - contact form-->
+				<div class="two-column">
+
+					<!--Contact form post-->
+					<!-- Div Containers for the structure of the posts (like a social media post) on page (https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div)-->
+					<div class="post-content">
+						<div class="post-header-content">
+							<div class="post-icon">JF</div>
+							<div class="name-date-post-wrapper">
+								<div class="post-name">Jordaine Forde</div>
+								<div class="post-date">Get In Touch</div>
+							</div>
+							<span class="type-tag">Contact</span>
+						</div>
+						<h2>Message Me📬</h2>
+						<p>Want to connect? Fill in the form below.</p>
+						<!--Contact form - Promps user to type name, email and a message which is ran through JavaScript (https://www.w3schools.com/html/html_forms.asp)-->
+						<form id="contact-form"><!--creates a real from that sends all user messages to a real email-->
+						<div class="form-contact">
+							<label for="name">Name</label>
+							<input type="text" id="name" name="name"placeholder="Your name">
+							<!--Form error message-->
+							<span class="form-error" id="name-error"></span>
+						</div>
+						<div class="form-contact">
+							<label for="email">Email</label>
+							<input type="email" id="email" name="email" placeholder="Your email">
+							<span class="form-error" id="email-error"></span>
+						</div>
+						<!--Textarea creates a more than one line in the input allowing user to stype a whole message (https://www.w3schools.com/tags/tag_textarea.asp)-->
+						<div class="form-contact">
+							<label for="message">Message</label>
+							<textarea id="message" name="message" rows="5" placeholder="Your message"></textarea>
+							<span class="form-error" id="message-error"></span>
+						</div>
+						<!--Send button - uses JavaScript validation-->
+						<button class="post-button" id="sendBtn">Send</button>
+						<!--User will see a message when function is completed successfully-->
+						<p id="form-success" class="form-success">Your message has been sent</p>
+					</form>
+					</div>
+
+				</div>
+
+				<!--Right - navigation bar-->
+				<div class="nav-bar">
+					<div class="nav-side-bar">
+						<h3>Pages</h3>
+						<!--Navigation links - uses an unordered list to display links to other pages (https://www.w3schools.com/html/html_lists.asp)-->
+						<ul class="nav-links">
+							<li><a href="index.html">🏠 Home</a></li>
+							<li><a href="about_me.html">👤 About Me</a></li>
+							<li><a href="lab_projects.html">💡 Projects</a></li>
+							<li><a href="my_cv.html">📄 My CV</a></li>
+						</ul>
+					</div>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<!--External JavaScript file for form validation-->
+	<script src="script.js"></script>
+</body>
+</html>
