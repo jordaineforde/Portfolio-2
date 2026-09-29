@@ -1,151 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>About Me | Jordaine Forde</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+    <title>About Me | Jordaine Forde</title>
+
+    <!-- Preconnect for speed -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- High-priority font stylesheet preload to prevent text flashing -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&family=Syne:wght@700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&family=Syne:wght@700&display=swap" rel="stylesheet">
+    </noscript>
+
+    <!-- Preload the background image so it caches instantly across tabs -->
+    <link rel="preload" as="image" href="background-waves.jpg">
+
+    <!-- Universal stylesheet -->
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-<!-- About Me page is styled like a social media profile -->
-	<div class="tab-window">
-<!--This section adds tabs to the About Me page to help the user navigate my portfolio and to further add to the computer theme-->
-    <div class="page-tabs"> <!--Google tabs (natvigation tabs) are the same across all pages-->
-        <a href="index.html" class="tabs" data-page="index">Home</a>
-        <a href="lab_projects.html" class="tabs" data-page="lab projects">Projects</a>
-        <a href="contact.html" class="tabs" data-page="contact">Contact</a>
-        <a href="about_me.html" class="tabs active" data-page="about me">About Me</a>
-        <a href="my_cv.html" class="tabs" data-page="my cv">My CV</a>
-    </div>
-    <!--This control adds a address bar to further enhance the computer theme-->
-    <div class="url-bar">
-        <span class="url">www.jordaineforde.com/about-me</span>
-    </div>
-<!--This section styles the page like a social media/reddit forum-->
-    <div class="screen-page">
-        <h1 class="page-heading">About Me</h1>
- <!-- Introduction - name, username, date joined -->
-<!--Profile section was built using div containers which creates 3 sections-->
-        <div class="forum-box">
-            <div class="banner"></div>
-            <div class="user-profile">
-                <div class="icon">JF</div>
-                <div class="main-info">
-                    <div class="name-info">Jordaine Forde</div>
-                    <div class="username-info">@jordaineforde · Computing Student · University of Greenwich</div>
-                    <div class="profile-tags">
-                        <span class="tags">🎓 First Year</span>
-                        <span class="tags">💻 BSc Computing AI</span>
-                        <span class="tags">📍 London</span>
-                    </div>
-                </div>
-                <div class="user-statistics">
-                    <div class="statistic">
-                        <strong>5</strong>
-                        <span>Pages</span>
-                    </div>
-                    <div class="statistic">
-                        <strong>3</strong>
-                        <span>Posts</span>
-                    </div>
-                    <div class="statistic">
-                        <strong>2025</strong>
-                        <span>Joined</span>
-                    </div>
-                </div>
-            </div>
+
+    <!-- Tab window container -->
+    <div class="tab-window">
+
+        <!-- Navigation tabs -->
+        <div class="page-tabs">
+            <a href="index.html" class="tabs">Home</a>
+            <a href="about_me.html" class="tabs active">About Me</a>
+            <a href="lab_projects.html" class="tabs">Projects</a>
+            <a href="my_cv.html" class="tabs">CV</a>
+            <a href="contact.html" class="tabs">Contact</a>
         </div>
 
-        <div class="page-layout">
-            <div class="two-column">
+        <!-- Screen page layout styling -->
+        <div class="screen-page">
+            <h1 class="page-title">About Me</h1>
+            <p class="page-subtitle">Computing student and creative based in London.</p>
 
-                <!--Introduction section - displays name and bio-->
-                <div class="post-content">
-                    <div class="post-header-content">
-                        <div class="post-icon">JF</div>
-                        <div class="name-date-post-wrapper">
-                            <div class="post-name">Jordaine Forde</div>
-                            <div class="post-date">Joined September 2025</div>
+            <!-- Page layout container using grid layout -->
+            <div class="page-layout">
+                
+                <!-- 1. Profile Overview Card (Full Width) -->
+                <div class="content-card full-width">
+                    <div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap;">
+                        <div style="background: rgba(168, 85, 247, 0.2); width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.25rem; color: var(--lilac); border: 1px solid rgba(168, 85, 247, 0.3);">JF</div>
+                        <div style="flex: 1; min-width: 200px;">
+                            <h2 style="font-family: var(--display); font-size: 1.25rem; font-weight: 700; color: var(--text); margin-bottom: 2px;">Jordaine Forde</h2>
+                            <p style="color: var(--muted); font-size: 0.85rem; margin-bottom: 8px;">Computing Student · University of Greenwich</p>
+                            <div class="badge-container">
+                                <span class="badge">🎓 First Year</span>
+                                <span class="badge">💻 BSc Computing AI</span>
+                                <span class="badge">📍 London</span>
+                            </div>
                         </div>
-                        <span class="type-tag">Introduction</span>
-                    </div>
-                    <h2>Me, Myself and I?</h2>
-                    <p>I'm a first-year computing student at the University of Greenwich, marketing enthusiast and blog writer. I have a passion for film and creative media which is the vehicle that drives me to create engaging digital spaces.</p>
-                    <div class="interact-post">
-                        <button class="post-button">👍 Like</button>
-                        <button class="post-button">💬 Comment</button>
-                        <button class="post-button">🔗 Share</button>
                     </div>
                 </div>
 
-<!--Interests section - displays subjects of interest-->
-                <div class="post-content">
-                    <div class="post-header-content">
-                        <div class="post-icon">JF</div>
-                        <div class="name-date-post-wrapper">
-                            <div class="post-name">Jordaine Forde</div>
-                            <div class="post-date">Interests</div>
-                        </div>
-                        <span class="type-tag">Skills &amp; Interests</span>
+                <!-- 2. Introduction Card -->
+                <div class="content-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                        <span style="font-size: 0.8rem; font-weight: 600; color: var(--accent);">Introduction</span>
+                        <span style="background: rgba(168, 85, 247, 0.15); color: #e9d5ff; padding: 2px 10px; border-radius: 999px; font-size: 0.75rem;">Profile</span>
                     </div>
-                    <h2>What I do</h2>
-                    <p>Software development &amp; Web design</p>
-                    <p>Data analytics &amp; Data visualisation</p>
-                    <p>AI &amp; Intelligence</p>
-                    <p>Creative Media, Marketing &amp; Film</p>
-                    <div class="interact-post">
-                        <button class="post-button">👍 Like</button>
-                        <button class="post-button">💬 Comment</button>
-                        <button class="post-button">🔗 Share</button>
-                    </div>
+                    <h2 style="font-family: var(--display); font-size: 1.15rem; font-weight: 700; margin-bottom: 6px; color: var(--text);">Background &amp; Profile</h2>
+                    <p style="color: var(--muted); font-size: 0.85rem; line-height: 1.5; margin-bottom: 12px;">I am a BSc Computing (AI) student at the University of Greenwich with over 7 years of professional experience in data management, process optimisation, and client engagement.</p>
+                    <p style="color: var(--muted); font-size: 0.85rem; line-height: 1.5; margin-bottom: 8px;">Bridging technical development with business strategy, I specialise in designing user-focused web platforms, evaluating system requirements, and analysing the impact of emerging AI technologies.</p>
                 </div>
 
-<!--Aspirations section - displays career goals and aspirations-->
-                <div class="post-content">
-                    <div class="post-header-content">
-                        <div class="post-icon">JF</div>
-                        <div class="name-date-post-wrapper">
-                            <div class="post-name">Jordaine Forde</div>
-                            <div class="post-date">Aspirations</div>
-                        </div>
-                        <span class="type-tag">Career Goals</span>
+                <!-- 3. Core Focus & Tech Interests Card -->
+                <div class="content-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                        <span style="font-size: 0.8rem; font-weight: 600; color: var(--accent);">Skills &amp; Interests</span>
+                        <span style="background: rgba(168, 85, 247, 0.15); color: #e9d5ff; padding: 2px 10px; border-radius: 999px; font-size: 0.75rem;">Focus</span>
                     </div>
-                    <h2>Career Aspirations & Focus</h2>
-                    <p>My goal is to work at the intersection of computing, strategy, and societal impact. As I expand my foundations in software engineering and data systems, I am particularly interested in pursuing paths in Business Analysis, Web Development, AI Policy, and Climate Tech.</p>
-                    <p>Applied Skills & Immediate Value (Gap Year): I am seeking entry-level roles in IT Support, Web/CMS Administration, Digital Operations, or Junior Data/Project Support. I bring strong operational discipline, UI/UX logic implementation, and practical web build capabilities to immediate business workflows.</p>
-                    <p>Long-Term Vision: I aim to leverage my computing background to solve complex systemic challenges—whether that means optimising business processes as a Business Analyst, shaping ethical governance in AI Policy, or deploying software solutions within Climate Tech.</p>
+                    <h2 style="font-family: var(--display); font-size: 1.15rem; font-weight: 700; margin-bottom: 6px; color: var(--text);">Core Focus &amp; Tech Interests</h2>
+                    <p style="color: var(--muted); font-size: 0.85rem; line-height: 1.5; margin-bottom: 8px;"><strong style="color: var(--text);">Business Analysis &amp; Systems Design:</strong> Requirements engineering, UML system modeling, Agile/Scrum workflows, and process optimization.</p>
+                    <p style="color: var(--muted); font-size: 0.85rem; line-height: 1.5; margin-bottom: 8px;"><strong style="color: var(--text);">Frontend Web Development:</strong> Responsive web design, DOM manipulation, CSS/JS layout design, and accessible UI development.</p>
+                    <p style="color: var(--muted); font-size: 0.85rem; line-height: 1.5; margin-bottom: 8px;"><strong style="color: var(--text);">AI Policy &amp; Ethics:</strong> Evaluating AI system capabilities, risk frameworks, threat modeling, and technology governance.</p>
+                    <p style="color: var(--muted); font-size: 0.85rem; line-height: 1.5; margin-bottom: 8px;"><strong style="color: var(--text);">AI Climate Tech &amp; Data:</strong> Data analytics, visual modeling, and applying intelligent software solutions to sustainability challenges.</p>
+                </div>
+
+                <!-- 4. Career Aspirations & Focus Card (Full Width) -->
+                <div class="content-card full-width">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                        <span style="font-size: 0.8rem; font-weight: 600; color: var(--accent);">Career Goals</span>
+                        <span style="background: rgba(168, 85, 247, 0.15); color: #e9d5ff; padding: 2px 10px; border-radius: 999px; font-size: 0.75rem;">Aspirations</span>
+                    </div>
+                    <h2 style="font-family: var(--display); font-size: 1.15rem; font-weight: 700; margin-bottom: 6px; color: var(--text);">Career Aspirations &amp; Focus</h2>
+                    <p style="color: var(--muted); font-size: 0.85rem; line-height: 1.5; margin-bottom: 8px;">My goal is to work at the intersection of computing, strategy, and societal impact. As I expand my foundations in software engineering and data systems, I am particularly interested in pursuing paths in Business Analysis, Web Development, AI Policy, and Climate Tech.</p>
+                    <p style="color: var(--muted); font-size: 0.85rem; line-height: 1.5; margin-bottom: 8px;"><strong style="color: var(--text);">Applied Skills &amp; Immediate Value (Gap Year):</strong> I am seeking entry-level roles in IT Support, Web/CMS Administration, Digital Operations, or Junior Data/Project Support. I bring strong operational discipline, UI/UX logic implementation, and practical web build capabilities to immediate business workflows.</p>
+                    <p style="color: var(--muted); font-size: 0.85rem; line-height: 1.5; margin-bottom: 12px;"><strong style="color: var(--text);">Long-Term Vision:</strong> I aim to leverage my computing background to solve complex systemic challenges—whether that means optimising business processes as a Business Analyst, shaping ethical governance in AI Policy, or deploying software solutions within Climate Tech.</p>
                     
-                    <div class="interact-post">
-                        <button class="post-button">👍 Like</button>
-                        <button class="post-button">💬 Comment</button>
-                        <button class="post-button">🔗 Share</button>
+                    <div style="text-align: center; margin-top: 16px;">
+                        <a href="contact.html" class="button-main" style="display: inline-block; text-decoration: none;">Get In Touch</a>
                     </div>
                 </div>
 
             </div>
-
-            <div class="nav-bar">
-                <!-- About  -->
-                <div class="nav-side-bar">
-                    <h3>About Me</h3>
-                    <p>Welcome to my portfolio. A space where I share my journey as a computing student and creative.</p>
-                    <a href="contact.html" class="navbar-button">Get In Touch</a>
-                </div>
-                <!-- Pages  -->
-                <div class="nav-side-bar">
-                    <h3>Pages</h3>
-                    <ul class="nav-links">
-                        <li><a href="index.html">🏠 Home</a></li>
-                        <li><a href="lab_projects.html">💡 Projects</a></li>
-                        <li><a href="my_cv.html">📄 My CV</a></li>
-                        <li><a href="contact.html">📬 Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-
         </div>
     </div>
-	</div>
-<script src="script.js"></script>
+    
+    <script src="script.js"></script>
 </body>
 </html>

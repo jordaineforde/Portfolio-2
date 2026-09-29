@@ -1,181 +1,273 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Projects | Jordaine Forde</title>
-	<!-- Universal stylesheet -->
-	<link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Jordaine Forde</title>
+
+    <!-- Preconnect for speed -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- High-priority font stylesheet preload to prevent text flashing -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&family=Syne:wght@700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&family=Syne:wght@700&display=swap" rel="stylesheet">
+    </noscript>
+
+     <!-- Preload the background image so it caches instantly across tabs -->
+    <link rel="preload" as="image" href="background-waves.jpg">
+
+    <!-- Universal stylesheet -->
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-<!-- LabProjects page - displays year 1 lab work -->
-	<div class="tab-window">
-<!--Navigation tabs are the same across all pages-->
-		<div class="page-tabs">
-			<a href="index.html" class="tabs">Home</a>
-			<a href="lab_projects.html" class="tabs active">Projects</a>
-			<a href="contact.html" class="tabs">Contact</a>
-			<a href="about_me.html" class="tabs">About Me</a>
-			<a href="my_cv.html" class="tabs">My CV</a>
-		</div>
-		<!--Faux URL to mimic a browser address bar-->
-		<div class="url-bar">
-			<span class="url">www.jordaineforde.com/projects</span>
-		</div>
-		<!--Projects content layout like a social media feed-->
-		<div class="screen-page">
-			<h1 class="page-heading">Projects</h1>
-			<!--Two column layout - seperates screen into 2 using grid layout (https://css-tricks.com/snippets/css/complete-guide-grid/) -->
-			<div class="page-layout">
-				<!--Left - project post/updates -->
-				<div class="two-column">
 
-					<!--This section covers HTML and CSS lab tasks-->
-					<!--Every project post uses it own div container (https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div)-->
-					<div class="post-content">
-						<div class="post-header-content">
-							<div class="post-icon">JF</div>
-							<div class="name-date-post-wrapper">
-								<div class="post-name">Jordaine Forde</div>
-								<div class="post-date">Weeks 2 - 5</div>
-							</div>
-							<span class="type-tag">🌐 HTML &amp; CSS</span>
-						</div>
-						<h2>HTML &amp; CSS Lab Tasks</h2>
-						<p>HTML basics, More HTML, CSS Introduction, Advanced CSS</p>
-						<p>What I built: HTML pages (with headings, lists, paragraphs and links), Stylesheets(built with CSS), Layout pages(with flexbox and grid)</p>
-						<div class="interact-post">
-							<button class="post-button">👍 Like</button> <!--Emojis - adds to social media theme-->
-							<button class="post-button">💬 Comment</button>
-							<button class="post-button">🔗 Share</button>
-						</div>
-					</div>
+    <!-- Tab window container -->
+    <div class="tab-window">
 
-					<!-- This covers theJavaScript projects-->
-					<div class="post-content">
-						<div class="post-header-content">
-							<div class="post-icon">JF</div>
-							<div class="name-date-post-wrapper">
-								<div class="post-name">Jordaine Forde</div>
-								<div class="post-date">Weeks 6 - 9</div>
-							</div>
-							<span class="type-tag">⚡ JavaScript</span>
-						</div>
-						<h2>JavaScript Lab Tasks</h2>
-						<p>JavaScript basics, Conditions in JavaScript, Loops in JavaScript</p>
-						<p>What I built: Fahrenheit to Celsius converter, Mondrian art generator, Art Balling generator</p>
-						<div class="interact-post">
-							<button class="post-button">👍 Like</button>
-							<button class="post-button">💬 Comment</button>
-							<button class="post-button">🔗 Share</button>
-						</div>
-					</div>
+        <!-- Navigation tabs -->
+        <div class="page-tabs">
+            <a href="index.html" class="tabs">Home</a>
+            <a href="about_me.html" class="tabs">About Me</a>
+            <a href="lab_projects.html" class="tabs active">Projects</a>
+            <a href="my_cv.html" class="tabs">CV</a>
+            <a href="contact.html" class="tabs">Contact</a>
+        </div>
 
-					<!--This section covers the cybersecurity project-->
-					<div class="post-content">
-						<div class="post-header-content">
-							<div class="post-icon">JF</div>
-							<div class="name-date-post-wrapper">
-								<div class="post-name">Jordaine Forde</div>
-								<div class="post-date">COMP1843</div>
-							</div>
-							<span class="type-tag">🔒 Security</span>
-						</div>
-						<h2>Cybersecurity Risk Evaluation</h2>
-						<p>A risk report for a company called SmartCampus Services .</p>
-						<p>This project covered: LEGO threat modelling, Risk identification, Weighted factor analysis/Risk register, Risk management and Risk control strategies.</p>
-						<div class="interact-post">
-							<button class="post-button">👍 Like</button>
-							<button class="post-button">💬 Comment</button>
-							<button class="post-button">🔗 Share</button>
-						</div>
-					</div>
+        <!-- Screen page layout styling -->
+        <div class="screen-page">
+            <h1 class="page-title">Projects</h1>
+            <p class="page-subtitle">Work from my first year at the University of Greenwich - more to be added as course progresses.</p>
 
-					<!--This section covers the portfolio website project-->
-					<div class="post-content">
-						<div class="post-header-content">
-							<div class="post-icon">JF</div>
-							<div class="name-date-post-wrapper">
-								<div class="post-name">Jordaine Forde</div>
-								<div class="post-date">COMP1589</div>
-							</div>
-							<span class="type-tag">💻 Portfolio</span>
-						</div>
-						<h2>Portfolio Website</h2>
-						<p>Portfolio website with social media and browser themes.</p>
-						<p>This project covered: Responsive design, DOM manipulation, CSS styling, Browser compatibility, JavaScript, HTML and Accessibility.</p>
-						<div class="interact-post">
-							<button class="post-button">👍 Like</button>
-							<button class="post-button">💬 Comment</button>
-							<button class="post-button">🔗 Share</button>
-						</div>
-					</div>
+            <!-- Page layout container using column masonry layout -->
+            <div class="page-layout">
+                
+                <!-- 1. Open Day Management Platform -->
+                <div class="content-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                        <span style="font-size: 0.8rem; font-weight: 600; color: var(--accent);">COMP1856</span>
+                        <span style="background: rgba(168, 85, 247, 0.15); color: #e9d5ff; padding: 2px 10px; border-radius: 999px; font-size: 0.75rem;">Project</span>
+                    </div>
+                    <h2 style="font-family: var(--display); font-size: 1.15rem; font-weight: 700; margin-bottom: 6px; color: var(--text);">Open Day Management Platform</h2>
+                    <p style="color: var(--muted); font-size: 0.85rem; line-height: 1.4; margin-bottom: 6px;">A centralised digital event platform to replace email/spreadsheet communication for open day events.</p>
+                    <p style="color: var(--muted); font-size: 0.85rem; line-height: 1.4; margin-bottom: 8px;">This project covered: Agile/Scrum Implementation, Stakeholder and Risk analysis, UML &amp; System Modeling and Requirements Engineering.</p>
+                    
+                    <div style="margin-top: 8px; border: 1px solid var(--glass-line); border-radius: 8px; overflow: hidden; background: rgba(0, 0, 0, 0.2); padding: 8px;">
+                        <p style="font-size: 0.8rem; font-weight: 600; margin-bottom: 4px; color: var(--text);">Use Case Diagram</p>
+                        <div class="diagram-frame" style="margin-bottom: 8px;">
+                            <img src="use-case-diagram.jpg" alt="Open Day Use Case Diagram" style="width: 100%; display: block;">
+                        </div>
+                        
+                        <details style="padding: 6px 8px; background: rgba(0, 0, 0, 0.3); border-radius: 6px; cursor: pointer;">
+                            <summary style="font-weight: 600; font-size: 0.85rem; color: var(--lilac);">
+                                View Sequence &amp; UML Diagrams
+                            </summary>
+                            <div style="margin-top: 8px; display: flex; flex-direction: column; gap: 8px;">
+                                <div>
+                                    <p style="font-size: 0.8rem; font-weight: 600; margin-bottom: 4px; color: var(--text);">Propose Session Sequence Flow Diagram</p>
+                                    <img src="propose-session-sequence.jpg" alt="Propose Session Sequence Diagram" style="width: 100%; border-radius: 6px; border: 1px solid var(--glass-line);">
+                                </div>
+                                <div>
+                                    <p style="font-size: 0.8rem; font-weight: 600; margin-bottom: 4px; color: var(--text);">Unified Modeling Language (UML) Diagram</p>
+                                    <img src="uml-diagram.jpg" alt="UML Diagram" style="width: 100%; border-radius: 6px; border: 1px solid var(--glass-line);">
+                                </div>
+                            </div>
+                        </details>
+                    </div>
 
-					<!--This section covers the software engineering project-->
-					<div class="post-content">
-						<div class="post-header-content">
-							<div class="post-icon">JF</div>
-							<div class="name-date-post-wrapper">
-								<div class="post-name">Jordaine Forde</div>
-								<div class="post-date">COMP1856</div>
-							</div>
-							<span class="type-tag">🔒 Open Day Management Platform</span>
-						</div>
-						<h2>Open Day Management Platform</h2>
-						<p>A centralised digital event platform to replace email/spreadsheet communication for open day events.</p>
-						<p>This project covered: Agile/Scrum Implementation, Stakeholder and Risk analysis, UML & System Modeling and Requirements Engineering.</p>
-						<div class="interact-post">
-							<button class="post-button">👍 Like</button>
-							<button class="post-button">💬 Comment</button>
-							<button class="post-button">🔗 Share</button>
-						</div>
-					</div>
+                    <div class="badge-container" style="margin-top: 8px;">
+                        <span class="badge">Agile/Scrum</span>
+                        <span class="badge">Stakeholder analysis</span>
+                        <span class="badge">UML modelling</span>
+                        <span class="badge">Requirements engineering</span>
+                    </div>
 
-					<!--This section covers the music simulator project-->
-					<div class="post-content">
-						<div class="post-header-content">
-							<div class="post-icon">JF</div>
-							<div class="name-date-post-wrapper">
-								<div class="post-name">Jordaine Forde</div>
-								<div class="post-date">COMP1752</div>
-							</div>
-							<span class="type-tag">🔒 Jukebox App Simulator</span>
-						</div>
-						<h2>Jukebox App Simulator</h2>
-						<p>An interactive web application simulating audio playback controls, playlist interaction and media state management.</p>
-						<p>This project covered: Event driven JavaScript, Debugging, Component styling, DOM manipulation, and State management.</p>
-						<div class="interact-post">
-							<button class="post-button">👍 Like</button>
-							<button class="post-button">💬 Comment</button>
-							<button class="post-button">🔗 Share</button>
-						</div>
-					</div>
+                    <div class="project-links" style="display: flex; gap: 10px; margin-top: 12px;">
+                        <a href="https://github.com/jordaineforde/open-day-management-system" target="_blank" class="button-secondary" style="font-size: 0.8rem; padding: 6px 14px; text-decoration: none;">View System Specs &rarr;</a>
+                    </div>
+                </div>
 
+                <!-- 2. Jukebox App Simulator -->
+                <div class="content-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                        <span style="font-size: 0.8rem; font-weight: 600; color: var(--accent);">COMP1752</span>
+                        <span style="background: rgba(168, 85, 247, 0.15); color: #e9d5ff; padding: 2px 10px; border-radius: 999px; font-size: 0.75rem;">Python App</span>
+                    </div>
+                    <h2 style="font-family: var(--display); font-size: 1.15rem; font-weight: 700; margin-bottom: 6px; color: var(--text);">Jukebox App Simulator</h2>
+                    <p style="color: var(--muted); font-size: 0.85rem; line-height: 1.4; margin-bottom: 6px;">An interactive Python GUI application simulating jukebox controls, track listing, ratings, and automated testing.</p>
+                    <p style="color: var(--muted); font-size: 0.85rem; line-height: 1.4; margin-bottom: 8px;">This project covered: Tkinter GUI design, Object-Oriented Programming (OOP), Unit Testing with Pytest, and Track Library Management.</p>
+                    
+                    <div style="margin-top: 8px; border: 1px solid var(--glass-line); border-radius: 8px; overflow: hidden; background: rgba(0, 0, 0, 0.2); padding: 8px;">
+                        <p style="font-size: 0.8rem; font-weight: 600; margin-bottom: 4px; color: var(--text);">Main Application Window</p>
+                        <img src="gui-main.jpg" alt="Jukebox Main Menu Interface" style="width: 100%; border-radius: 6px; border: 1px solid var(--glass-line); margin-bottom: 8px;">
+                        
+                        <details style="padding: 6px 8px; background: rgba(0, 0, 0, 0.3); border-radius: 6px; cursor: pointer;">
+                            <summary style="font-weight: 600; font-size: 0.85rem; color: var(--lilac);">
+                                View Additional GUI Windows &amp; Unit Test Results
+                            </summary>
+                            <div style="margin-top: 8px; display: flex; flex-direction: column; gap: 8px;">
+                                <div>
+                                    <p style="font-size: 0.8rem; font-weight: 600; margin-bottom: 4px; color: var(--text);">1. View Tracks Window (view_tracks.py)</p>
+                                    <img src="gui-view.jpg" alt="View Tracks GUI Window" style="width: 100%; border-radius: 6px; border: 1px solid var(--glass-line);">
+                                </div>
+                                <div>
+                                    <p style="font-size: 0.8rem; font-weight: 600; margin-bottom: 4px; color: var(--text);">2. Update Tracks Window (update_tracks.py)</p>
+                                    <img src="gui-update.jpg" alt="Update Tracks GUI Window" style="width: 100%; border-radius: 6px; border: 1px solid var(--glass-line);">
+                                </div>
+                                <div>
+                                    <p style="font-size: 0.8rem; font-weight: 600; margin-bottom: 4px; color: var(--text);">3. Automated Unit Testing (Pytest Terminal Results)</p>
+                                    <img src="pytest-terminal.jpg" alt="Pytest Terminal Output" style="width: 100%; border-radius: 6px; border: 1px solid var(--glass-line);">
+                                </div>
+                            </div>
+                        </details>
+                    </div>
 
-				</div>
+                    <div class="badge-container" style="margin-top: 8px;">
+                        <span class="badge">Python</span>
+                        <span class="badge">Tkinter GUI</span>
+                        <span class="badge">OOP</span>
+                        <span class="badge">Pytest</span>
+                    </div>
 
-				<!--Right side - Navigation bar -->
-				<div class="nav-bar">
-					<div class="nav-side-bar">
-						<h3>Pages</h3>
-						<!--Navigation links to other pages with emojis (https://www.w3schools.com/html/html_lists.asp)-->
-						<ul class="nav-links">
-							<li><a href="index.html">🏠 Home</a></li>
-							<li><a href="about_me.html">👤 About Me</a></li>
-							<li><a href="my_cv.html">📄 My CV</a></li>
-							<li><a href="contact.html">📬 Contact</a></li>
-						</ul>
-					</div>
-					<div class="nav-side-bar">
-						<h3>About My Projects</h3>
-						<p> A collection of projects from first year at the University of Greenwich.</p>
-						<a href="contact.html" class="navbar-button">Get In Touch</a>
-					</div>
-				</div>
+                    <div class="project-links" style="display: flex; gap: 10px; margin-top: 12px;">
+                        <a href="https://github.com/jordaineforde/jukebox-app" target="_blank" class="button-secondary" style="font-size: 0.8rem; padding: 6px 14px; text-decoration: none;">View Code on GitHub &rarr;</a>
+                    </div>
+                </div>
 
-			</div>
-		</div>
-	</div>
-	<script src="script.js"></script>
+                <!-- 3. Cybersecurity Risk Evaluation -->
+                <div class="content-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                        <span style="font-size: 0.8rem; font-weight: 600; color: var(--accent);">COMP1843</span>
+                        <span style="background: rgba(168, 85, 247, 0.15); color: #e9d5ff; padding: 2px 10px; border-radius: 999px; font-size: 0.75rem;">Security</span>
+                    </div>
+                    <h2 style="font-family: var(--display); font-size: 1.15rem; font-weight: 700; margin-bottom: 6px; color: var(--text);">Cybersecurity Risk Evaluation</h2>
+                    <p style="color: var(--muted); font-size: 0.85rem; line-height: 1.4; margin-bottom: 6px;">A risk report for a company called SmartCampus Services.</p>
+                    <p style="color: var(--muted); font-size: 0.85rem; line-height: 1.4; margin-bottom: 8px;">This project covered: LEGO threat modelling, Risk identification, Weighted factor analysis/Risk register, Risk management and Risk control strategies.</p>
+                    
+                    <div style="margin-top: 8px; border: 1px solid var(--glass-line); border-radius: 8px; overflow: hidden; background: rgba(0, 0, 0, 0.2); padding: 8px;">
+                        <p style="font-size: 0.8rem; font-weight: 600; margin-bottom: 4px; color: var(--text);">Weighted Factor Risk Analysis Table</p>
+                        <img src="weighted-factor-table.jpg" alt="Weighted Factor Risk Analysis Table" style="width: 100%; border-radius: 6px; border: 1px solid var(--glass-line); margin-bottom: 8px;">
+                        
+                        <details style="padding: 6px 8px; background: rgba(0, 0, 0, 0.3); border-radius: 6px; cursor: pointer;">
+                            <summary style="font-weight: 600; font-size: 0.85rem; color: var(--lilac);">
+                                View Risk Register &amp; LEGO Threat Models
+                            </summary>
+                            <div style="margin-top: 8px; display: flex; flex-direction: column; gap: 8px;">
+                                <div>
+                                    <p style="font-size: 0.8rem; font-weight: 600; margin-bottom: 4px; color: var(--text);">1. Risk Register</p>
+                                    <img src="risk-register.jpg" alt="Cybersecurity Risk Register" style="width: 100%; border-radius: 6px; border: 1px solid var(--glass-line);">
+                                </div>
+                                <div>
+                                    <p style="font-size: 0.8rem; font-weight: 600; margin-bottom: 4px; color: var(--text);">2. LEGO Threat Modeling (Layered Architecture)</p>
+                                    <img src="lego-threat-model.jpg" alt="LEGO Threat Model Architecture" style="width: 100%; border-radius: 6px; border: 1px solid var(--glass-line);">
+                                </div>
+                                <div>
+                                    <p style="font-size: 0.8rem; font-weight: 600; margin-bottom: 4px; color: var(--text);">3. LEGO Vulnerabilities Model</p>
+                                    <img src="lego-vulnerabilities.jpg" alt="LEGO Vulnerabilities Model" style="width: 100%; border-radius: 6px; border: 1px solid var(--glass-line);">
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+
+                    <div class="badge-container" style="margin-top: 8px;">
+                        <span class="badge">Threat Modelling</span>
+                        <span class="badge">Risk Register</span>
+                        <span class="badge">Weighted Factor Analysis</span>
+                    </div>
+                </div>
+
+                <!-- 4. Portfolio Website -->
+                <div class="content-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                        <span style="font-size: 0.8rem; font-weight: 600; color: var(--accent);">COMP1589</span>
+                        <span style="background: rgba(168, 85, 247, 0.15); color: #e9d5ff; padding: 2px 10px; border-radius: 999px; font-size: 0.75rem;">Web Dev</span>
+                    </div>
+                    <h2 style="font-family: var(--display); font-size: 1.15rem; font-weight: 700; margin-bottom: 6px; color: var(--text);">Portfolio Website</h2>
+                    <p style="color: var(--muted); font-size: 0.85rem; line-height: 1.4; margin-bottom: 6px;">Portfolio website built with modern CSS themes.</p>
+                    <p style="color: var(--muted); font-size: 0.85rem; line-height: 1.4; margin-bottom: 8px;">This project covered: Responsive design, DOM manipulation, CSS styling, Browser compatibility, JavaScript, HTML and Accessibility.</p>
+                    
+                    <div style="margin-top: 8px; border: 1px solid var(--glass-line); border-radius: 8px; overflow: hidden; background: rgba(0, 0, 0, 0.2); padding: 8px;">
+                        <p style="font-size: 0.8rem; font-weight: 600; margin-bottom: 4px; color: var(--text);">Main Projects Feed Preview</p>
+                        <img src="projects-preview.png" alt="Portfolio Projects Page Preview" style="width: 100%; border-radius: 6px; border: 1px solid var(--glass-line); margin-bottom: 8px;">
+                        
+                        <details style="padding: 6px 8px; background: rgba(0, 0, 0, 0.3); border-radius: 6px; cursor: pointer;">
+                            <summary style="font-weight: 600; font-size: 0.85rem; color: var(--lilac);">
+                                View About Me, CV &amp; Contact Page Screenshots
+                            </summary>
+                            <div style="margin-top: 8px; display: flex; flex-direction: column; gap: 8px;">
+                                <div>
+                                    <p style="font-size: 0.8rem; font-weight: 600; margin-bottom: 4px; color: var(--text);">1. About Me Page</p>
+                                    <img src="about-preview.png" alt="About Me Page Preview" style="width: 100%; border-radius: 6px; border: 1px solid var(--glass-line);">
+                                </div>
+                                <div>
+                                    <p style="font-size: 0.8rem; font-weight: 600; margin-bottom: 4px; color: var(--text);">2. My CV Page</p>
+                                    <img src="cv-preview.png" alt="CV Page Preview" style="width: 100%; border-radius: 6px; border: 1px solid var(--glass-line);">
+                                </div>
+                                <div>
+                                    <p style="font-size: 0.8rem; font-weight: 600; margin-bottom: 4px; color: var(--text);">3. Contact Page</p>
+                                    <img src="contact-preview.png" alt="Contact Page Preview" style="width: 100%; border-radius: 6px; border: 1px solid var(--glass-line);">
+                                </div>
+                            </div>
+                        </details>
+                    </div>
+
+                    <div class="badge-container" style="margin-top: 8px;">
+                        <span class="badge">HTML</span>
+                        <span class="badge">CSS</span>
+                        <span class="badge">JavaScript</span>
+                        <span class="badge">Responsive Design</span>
+                    </div>
+                <div class="project-links" style="display: flex; gap: 10px; margin-top: 12px;">
+                        <a href="https://github.com/jordaineforde/portfolio-website" target="_blank" class="button-secondary" style="font-size: 0.8rem; padding: 6px 14px; text-decoration: none;">View Code on GitHub &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- 5. HTML & CSS Lab Tasks (Weeks 2 - 5) -->
+                <div class="content-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                        <span style="font-size: 0.8rem; font-weight: 600; color: var(--accent);">Weeks 2 - 5</span>
+                        <span style="background: rgba(168, 85, 247, 0.15); color: #e9d5ff; padding: 2px 10px; border-radius: 999px; font-size: 0.75rem;">Labs</span>
+                    </div>
+                    <h2 style="font-family: var(--display); font-size: 1.15rem; font-weight: 700; margin-bottom: 6px; color: var(--text);">HTML &amp; CSS Lab Tasks</h2>
+                    <p style="color: var(--muted); font-size: 0.85rem; line-height: 1.4; margin-bottom: 6px;">HTML basics, More HTML, CSS Introduction, Advanced CSS.</p>
+                    <p style="color: var(--muted); font-size: 0.85rem; line-height: 1.4; margin-bottom: 8px;">What I built: HTML pages, Custom stylesheets, Layout pages using Flexbox and Grid.</p>
+                    
+                    <div class="badge-container" style="margin-top: 8px;">
+                        <span class="badge">HTML5</span>
+                        <span class="badge">CSS3</span>
+                        <span class="badge">Flexbox &amp; Grid</span>
+                    </div>
+                </div>
+
+                <!-- 6. JavaScript Lab Tasks (Weeks 6 - 9) -->
+                <div class="content-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                        <span style="font-size: 0.8rem; font-weight: 600; color: var(--accent);">Weeks 6 - 9</span>
+                        <span style="background: rgba(168, 85, 247, 0.15); color: #e9d5ff; padding: 2px 10px; border-radius: 999px; font-size: 0.75rem;">Labs</span>
+                    </div>
+                    <h2 style="font-family: var(--display); font-size: 1.15rem; font-weight: 700; margin-bottom: 6px; color: var(--text);">JavaScript Lab Tasks</h2>
+                    <p style="color: var(--muted); font-size: 0.85rem; line-height: 1.4; margin-bottom: 6px;">JavaScript basics, Conditions in JavaScript, Loops in JavaScript.</p>
+                    <p style="color: var(--muted); font-size: 0.85rem; line-height: 1.4; margin-bottom: 8px;">What I built: Fahrenheit to Celsius converter, Mondrian art generator, Art Balling generator.</p>
+                    
+                    <div class="badge-container" style="margin-top: 8px;">
+                        <span class="badge">JavaScript</span>
+                        <span class="badge">DOM Logic</span>
+                        <span class="badge">Control Flow</span>
+                    </div>
+                </div>
+
+                <!-- Want to work together card (Centered Full-Width) -->
+                <div class="content-card full-width" style="text-align: center;">
+                    <h2 style="font-family: var(--display); font-size: 1.1rem; font-weight: 700; margin-bottom: 6px; color: var(--text);">Want to work together?</h2>
+                    <p style="color: var(--muted); font-size: 0.85rem; margin-bottom: 12px;">Send me a message and I will get back to you.</p>
+                    <a href="contact.html" class="button-main" style="display: inline-block; width: auto; text-decoration: none;">Get In Touch</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
 </body>
 </html>

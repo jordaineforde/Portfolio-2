@@ -1,94 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Contact | Jordaine Forde</title>
-	<!-- Universal stylesheet -->
-	<link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Jordaine Forde</title>
+
+    <!-- Preconnect for speed -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- High-priority font stylesheet preload to prevent text flashing -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&family=Syne:wght@700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&family=Syne:wght@700&display=swap" rel="stylesheet">
+    </noscript>
+
+    <!-- Preload the background image so it caches instantly across tabs -->
+    <link rel="preload" as="image" href="background-waves.jpg">
+
+    <!-- Universal stylesheet -->
+    <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-<!-- Contact page  -->
-	<div class="tab-window">
-<!--Navigation tabs -->
-		<div class="page-tabs">
-			<a href="index.html" class="tabs">Home</a>
-			<a href="lab_projects.html" class="tabs">Projects</a>
-			<a href="contact.html" class="tabs active">Contact</a>
-			<a href="about_me.html" class="tabs">About Me</a>
-			<a href="my_cv.html" class="tabs">My CV</a>
-		</div>
-		<!--Address bar to reflect computer theme-->
-		<div class="url-bar">
-			<span class="url">www.jordaineforde.com/contact</span>
-		</div>
-		<!--Contact form input fields-->
-		<div class="screen-page">
-			<h1 class="page-heading">Contact</h1>
-			<!--2 column layout (https://css-tricks.com/snippets/css/complete-guide-grid/)-->
-			<div class="page-layout">
-				<!--Left - contact form-->
-				<div class="two-column">
 
-					<!--Contact form post-->
-					<!-- Div Containers for the structure of the posts (like a social media post) on page (https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div)-->
-					<div class="post-content">
-						<div class="post-header-content">
-							<div class="post-icon">JF</div>
-							<div class="name-date-post-wrapper">
-								<div class="post-name">Jordaine Forde</div>
-								<div class="post-date">Get In Touch</div>
-							</div>
-							<span class="type-tag">Contact</span>
-						</div>
-						<h2>Message Me📬</h2>
-						<p>Want to connect? Fill in the form below.</p>
-						<!--Contact form - Promps user to type name, email and a message which is ran through JavaScript (https://www.w3schools.com/html/html_forms.asp)-->
-						<form id="contact-form"><!--creates a real from that sends all user messages to a real email-->
-						<div class="form-contact">
-							<label for="name">Name</label>
-							<input type="text" id="name" name="name"placeholder="Your name">
-							<!--Form error message-->
-							<span class="form-error" id="name-error"></span>
-						</div>
-						<div class="form-contact">
-							<label for="email">Email</label>
-							<input type="email" id="email" name="email" placeholder="Your email">
-							<span class="form-error" id="email-error"></span>
-						</div>
-						<!--Textarea creates a more than one line in the input allowing user to stype a whole message (https://www.w3schools.com/tags/tag_textarea.asp)-->
-						<div class="form-contact">
-							<label for="message">Message</label>
-							<textarea id="message" name="message" rows="5" placeholder="Your message"></textarea>
-							<span class="form-error" id="message-error"></span>
-						</div>
-						<!--Send button - uses JavaScript validation-->
-						<button class="post-button" id="sendBtn">Send</button>
-						<!--User will see a message when function is completed successfully-->
-						<p id="form-success" class="form-success">Your message has been sent</p>
-					</form>
-					</div>
+    <div class="tab-window">
+        <!-- Navigation tabs -->
+        <div class="page-tabs">
+            <a href="index.html" class="tabs">Home</a>
+            <a href="about_me.html" class="tabs">About Me</a>
+            <a href="lab_projects.html" class="tabs">Projects</a>
+            <a href="my_cv.html" class="tabs">CV</a>
+            <a href="contact.html" class="tabs active">Contact</a>
+        </div>
 
-				</div>
+        <!-- Screen page content -->
+        <div class="screen-page">
+            <h1 class="page-title">Contact</h1>
+            <p class="page-subtitle">Get in touch or explore my professional background</p>
 
-				<!--Right - navigation bar-->
-				<div class="nav-bar">
-					<div class="nav-side-bar">
-						<h3>Pages</h3>
-						<!--Navigation links - uses an unordered list to display links to other pages (https://www.w3schools.com/html/html_lists.asp)-->
-						<ul class="nav-links">
-							<li><a href="index.html">🏠 Home</a></li>
-							<li><a href="about_me.html">👤 About Me</a></li>
-							<li><a href="lab_projects.html">💡 Projects</a></li>
-							<li><a href="my_cv.html">📄 My CV</a></li>
-						</ul>
-					</div>
-				</div>
+            <!-- 2-Column Grid Layout -->
+            <div class="page-layout">
 
-			</div>
-		</div>
-	</div>
-	<!--External JavaScript file for form validation-->
-	<script src="script.js"></script>
+                <!-- Left Column: Contact Form Card -->
+                <div class="content-card">
+                    <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                        <div style="background: rgba(168, 85, 247, 0.2); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; color: var(--lilac);">JF</div>
+                        <div>
+                            <div style="font-weight: 600;">Jordaine Forde</div>
+                            <div style="color: var(--muted); font-size: 0.85rem;">Get In Touch</div>
+                        </div>
+                        <span class="badge" style="margin-left: auto;">Contact</span>
+                    </div>
+
+                    <h2 style="font-family: var(--display); font-size: 1.25rem; margin-bottom: 8px; color: var(--text);">Message Me 📬</h2>
+                    <p style="color: var(--muted); font-size: 0.9rem; margin-bottom: 16px;">Want to connect? Fill in the form below.</p>
+
+                    <!-- Updated form with your Formspree endpoint -->
+                    <form id="contact-form" action="https://formspree.io/f/xrejqpoq" method="POST">
+                        <div style="margin-bottom: 12px;">
+                            <label for="name" style="display: block; font-size: 0.85rem; margin-bottom: 4px; color: var(--text);">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your name" required style="width: 100%; padding: 10px 14px; background: rgba(0, 0, 0, 0.3); border: 1px solid var(--glass-line); border-radius: 8px; color: var(--text); font-family: inherit; outline: none;">
+                            <span class="form-error" id="name-error" style="color: #f87171; font-size: 0.75rem;"></span>
+                        </div>
+
+                        <div style="margin-bottom: 12px;">
+                            <label for="email" style="display: block; font-size: 0.85rem; margin-bottom: 4px; color: var(--text);">Email</label>
+                            <input type="email" id="email" name="email" placeholder="Your email" required style="width: 100%; padding: 10px 14px; background: rgba(0, 0, 0, 0.3); border: 1px solid var(--glass-line); border-radius: 8px; color: var(--text); font-family: inherit; outline: none;">
+                            <span class="form-error" id="email-error" style="color: #f87171; font-size: 0.75rem;"></span>
+                        </div>
+
+                        <div style="margin-bottom: 16px;">
+                            <label for="message" style="display: block; font-size: 0.85rem; margin-bottom: 4px; color: var(--text);">Message</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Your message" required style="width: 100%; padding: 10px 14px; background: rgba(0, 0, 0, 0.3); border: 1px solid var(--glass-line); border-radius: 8px; color: var(--text); font-family: inherit; outline: none; resize: vertical;"></textarea>
+                            <span class="form-error" id="message-error" style="color: #f87171; font-size: 0.75rem;"></span>
+                        </div>
+
+                        <button type="submit" class="button-main" id="sendBtn">Send</button>
+                        <p id="form-success" class="form-success" style="margin-top: 10px; color: #4ade80; font-size: 0.85rem; display: none;">Your message has been sent</p>
+                    </form>
+                </div>
+
+                <!-- Right Column: CV & Social Links Container -->
+                <div style="display: flex; flex-direction: column; gap: 20px;">
+                    
+                    <!-- CV Callout Card -->
+                    <div class="content-card" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 32px;">
+                        <div style="font-size: 3rem; margin-bottom: 16px;">📄</div>
+                        <h2 style="font-family: var(--display); font-size: 1.4rem; margin-bottom: 12px; color: var(--text);">Want to view my CV?</h2>
+                        <p style="color: var(--muted); font-size: 0.95rem; margin-bottom: 24px; line-height: 1.5;">Check out my academic background, technical skills, and professional experience.</p>
+                        <a href="my_cv.html" class="button-main">View My CV</a>
+                    </div>
+
+                    <!-- Social / Connect Links Card -->
+                    <div class="content-card" style="display: flex; flex-direction: column; gap: 12px; padding: 24px;">
+                        <h3 style="font-family: var(--display); font-size: 1.1rem; color: var(--text); margin-bottom: 4px;">Let's Connect</h3>
+                        
+                        <a href="mailto:jordaineforde@gmail.com" style="display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: rgba(0, 0, 0, 0.3); border: 1px solid var(--glass-line); border-radius: 8px; color: var(--text); text-decoration: none; font-size: 0.9rem; transition: background 0.2s;">
+                            <span>📧</span> jordaineforde@gmail.com
+                        </a>
+
+                        <a href="https://linkedin.com/in/jordaineforde/" target="_blank" style="display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: rgba(0, 0, 0, 0.3); border: 1px solid var(--glass-line); border-radius: 8px; color: var(--text); text-decoration: none; font-size: 0.9rem; transition: background 0.2s;">
+                            <span>💼</span> https://www.linkedin.com/in/jordaineforde/
+                        </a>
+
+                        <a href="https://github.com/jordaineforde" target="_blank" style="display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: rgba(0, 0, 0, 0.3); border: 1px solid var(--glass-line); border-radius: 8px; color: var(--text); text-decoration: none; font-size: 0.9rem; transition: background 0.2s;">
+                            <span>🐙</span> https://github.com/jordaineforde
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- External JavaScript file for form validation -->
+    <script src="script.js"></script>
 </body>
 </html>

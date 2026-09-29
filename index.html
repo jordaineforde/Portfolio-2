@@ -1,62 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--Allows website to have a responsive design on phones/tablets/older screens (https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag)-->
-	<title>Portfolio</title>
-	<link rel="stylesheet" type="text/css" href="index.css">
-    <link href="https://fonts.googleapis.com/css2?family=Product+Sans&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jordaine Forde - Portfolio</title>
+
+    <!-- 1. Load Google Fonts first -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&family=Syne:wght@700&display=swap" rel="stylesheet">
+
+    <!-- 2. Load stylesheet immediately after fonts to prevent messy loading / FOUC -->
+    <link rel="stylesheet" href="index.css">
+
+    <!-- 3. Preload background image -->
+    <link rel="preload" as="image" href="background-waves.jpg">
 </head>
 <body>
-    <div class="home-container">
-        <div class="home-left">
-             <p>Hi my name is</p>
-            <h1>Jordaine Forde</h1>
-            <p>I'm a first-year computing student at the University of Greenwich, marketing enthusiast and blog writer. I have a passion for film and creative media which is the vehicle that drives me to create engaging digital spaces. During my journey at university, I will be exploring software engineering, data analytics, intelligence and AI - of which my goal is to master one at a professional level.</p>
-         <img src="keyboard.png" alt="Drawing of a computer keyboard" class="keyboard"> <!--Drawn image of a computer keyboard and mouse Author - (Image by TheSartStudios from Pixabay https://pixabay.com/vectors/search/keyboard/)-->
-        </div>   
-        <div class="home-right">
-          <div class="monitor">
-            <div class="screen">
-                 <div class="tabs"> <!--Faux Google Tab Strip - each tab links to a different page(https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/data-*)  -->
-                        <a href="index.html" class="tab active" data-page="index">Home</a>
-                        <a href="lab_projects.html" class="tab" data-page="lab projects">Projects</a>
-                        <a href="contact.html" class="tab" data-page="contact">Contact</a>
-                        <a href="about_me.html" class="tab" data-page="about me">About Me</a>
-                        <a href="my_cv.html" class="tab" data-page="my cv">My CV</a>
-                    </div>
-                     <div class="screen-content"> <!-- adds the google search bar, portfolio logo(google style), button and search result-->
-                        <div id="google-bar" class="google-bar"> <!-- Google Seach Bar - uses basic HTML elements(https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input) -->
-                           <div class="portfolio-logo">
- <span class="logo-blue">P</span>
-    <span class="logo-red">o</span>
-    <span class="logo-yellow">r</span>
-    <span class="logo-blue">t</span>
-    <span class="logo-green">f</span>
-    <span class="logo-red">o</span>
-    <span class="logo-blue">l</span>
-    <span class="logo-yellow">i</span>
-    <span class="logo-green">o</span>
 
-                         </div>
-                            <div class="google-search"> <!--Google Search Bar - allows user to search portfolio using keywords(like a search engine) -->
-                                <input type="text" id="searchInput" autocomplete="off" placeholder="What would you like to know about me?"> <!--Search input - allows user to enter keywords(Autocomplete waas removed so there is no white autosuggestion box in the search bar) (https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/text) -->
-                                <button id="searchBtn">🔍</button>
-                            </div>
-                            <div id="search-results"></div> <!--Search Results will be displayed here using JavaScript-->
-                                    </div>
-                                     <div id="hover-preview"></div>
+    <div class="home-container-centered">
+        
+        <!-- Header / Title -->
+        <div class="home-header-center">
+            <h1>Jordaine Forde</h1>
+            <p class="professional-tagline">Computing &bull; AI &bull; Business Analysis &bull; Policy</p>
+        </div>
+
+        <!-- Monitor Section -->
+        <div class="home-monitor-center">
+            <div class="monitor">
+                <div class="screen">
+                    
+                    <!-- Top Navigation Tabs -->
+                    <div class="tabs">
+                        <a href="index.html" class="tab active">Home</a>
+                        <a href="about_me.html" class="tab">About Me</a>
+                        <a href="lab_projects.html" class="tab">Projects</a>
+                        <a href="my_cv.html" class="tab">CV</a>
+                        <a href="contact.html" class="tab">Contact</a>
                     </div>
-                    </div>
-                    <div class="stand"></div>
-                    <div class="base"></div>
-                </div>
-                </div>
+
+                    <!-- Static, Darker, Larger Holographic Earth Graphic (Behind search bar) -->
+                    <div class="screen-hero-graphic">
+                        <div class="earth-container">
+                            <svg class="earth-svg" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <radialGradient id="neonCore" cx="40%" cy="40%" r="60%">
+                                        <stop offset="0%" stop-color="#a855f7" />
+                                        <stop offset="40%" stop-color="#6b21a8" />
+                                        <stop offset="75%" stop-color="#4c1d95" />
+                                        <stop offset="100%" stop-color="#0f172a" />
+                                    </radialGradient>
+                                    
+                                    <radialGradient id="atmosphere" cx="50%" cy="50%" r="50%">
+                                        <stop offset="60%" stop-color="rgba(107, 33, 168, 0)" />
+                                        <stop offset="85%" stop-color="rgba(126, 34, 206, 0.2)" />
+                                        <stop offset="100%" stop-color="rgba(168, 85, 247, 0.35)" />
+                                    </radialGradient>
+
+                                    <filter id="superGlow" x="-50%" y="-50%" width="200%" height="200%">
+                                        <feGaussianBlur stdDeviation="4" result="blur1" />
+                                        <feGaussianBlur stdDeviation="8" result="blur2" />
+                                        <feMerge>
+                                            <feMergeNode in="blur2" />
+                                            <feMergeNode in="blur1" />
+                                            <feMergeNode in="SourceGraphic" />
+                                        </feMerge>
+                                    </filter>
+                                </defs>
+
+                                <!-- Outer Atmospheric Glow Halo -->
+                                <circle cx="200" cy="200" r="170" fill="url(#atmosphere)" />
+
+                                <!-- Main Globe Base Sphere -->
+                                <circle cx="200" cy="200" r="145" fill="url(#neonCore)" filter="url(#superGlow)" opacity="0.8" />
+
+                                <!-- Detailed Cyber Grid & Meridians -->
+                                <g stroke="rgba(192, 132, 252, 0.2)" stroke-width="1" fill="none" filter="url(#superGlow)">
+                                    <ellipse cx="200" cy="200" rx="145" ry="50" stroke-dasharray="2 4" />
+                                    <ellipse cx="200" cy="200" rx="145" ry="95" stroke-dasharray="2 4" />
+                                    <ellipse cx="200" cy="200" rx="50" ry="145" stroke-dasharray="2 4" />
+                                    <ellipse cx="200" cy="200" rx="105" ry="145" stroke-dasharray="2 4" />
+                                    <circle cx="200" cy="200" r="145" stroke-width="1.2" stroke="rgba(168, 85, 247, 0.3)" />
+                                    <line x1="50" y1="200" x2="350" y2="200" stroke-dasharray="4 4" />
+                                    <line x1="200" y1="50" x2="200" y2="350" stroke-dasharray="4 4" />
+                                </g>
+
+                                <!-- Holographic Dot Matrix / Continental Scatter Points -->
+                                <g fill="#d8b4fe" filter="url(#superGlow)" opacity="0.7">
+                                    <circle cx="150" cy="140" r="2.5" /><circle cx="165" cy="125" r="2" /><circle cx="140" cy="165" r="2" /><circle cx="155" cy="180" r="2.5" /><circle cx="145" cy="210" r="2" /><circle cx="160" cy="235" r="2.5" /><circle cx="135" cy="250" r="2" />
+                                    <circle cx="220" cy="115" r="2" /><circle cx="240" cy="100" r="2.5" /><circle cx="255" cy="125" r="2" /><circle cx="230" cy="150" r="2.5" /><circle cx="215" cy="175" r="2" /><circle cx="235" cy="195" r="2.5" /><circle cx="225" cy="225" r="2" /><circle cx="210" cy="250" r="2" />
+                                    <circle cx="280" cy="140" r="2" /><circle cx="295" cy="165" r="2.5" /><circle cx="270" cy="190" r="2" />
+                                </g>
+
+                                <!-- Interconnecting Node Lines -->
+                                <g stroke="rgba(192, 132, 252, 0.25)" stroke-width="0.8" filter="url(#superGlow)">
+                                    <line x1="150" y1="140" x2="165" y2="125" />
+                                    <line x1="165" y1="125" x2="220" y2="115" />
+                                    <line x1="220" y1="115" x2="240" y2="100" />
+                                    <line x1="155" y1="180" x2="230" y2="150" />
+                                    <line x1="230" y1="150" x2="280" y2="140" />
+                                    <line x1="160" y1="235" x2="225" y2="225" />
+                                </g>
+                            </svg>
+
+                            <!-- Static Orbital Rings -->
+                            <div class="orbit orbit-1"></div>
+                            <div class="orbit orbit-2"></div>
                         </div>
-   </div>
-   <!--JavaScript code is in its own separate file (https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script)-->
-   <script src="script.js"></script>
-           
-           
+                    </div>
+
+                    <!-- Search Bar -->
+                    <div class="google-bar">
+                        <div class="google-search">
+                            <input type="text" id="searchInput" placeholder="Search projects, skills, or experience...">
+                            <button type="submit" id="searchBtn">&#128269;</button>
+                        </div>
+                        <div id="search-results" style="display: none;"></div>
+                    </div>
+
+                    <!-- Intro Text -->
+                    <div class="screen-main-body">
+                        <p class="screen-intro-box" id="typing-intro"><span class="cursor"></span></p>
+                    </div>
+
+                    <!-- Action Buttons (CV button now triggers direct file download) -->
+                    <div class="hero-buttons">
+                        <a href="lab_projects.html" class="btn-primary">Explore My Work</a>
+                        <a href="JordaineFordeCV.pdf" download class="btn-secondary">Download CV &darr;</a>
+                    </div>
+
+                    <!-- Bottom Section Stats -->
+                    <div class="screen-bottom-section">
+                        <div class="hero-stats">
+                            <div class="stat-card">
+                                <span class="stat-label">PROJECTS</span>
+                                <span class="stat-number">02</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-label">CASE STUDIES</span>
+                                <span class="stat-number">02</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-label">LAST UPDATED</span>
+                                <span class="stat-status"><span class="pulse-dot"></span>SEPTEMBER</span>
+                            </div>
+                            <div class="stat-card">
+                                <span class="stat-label">AVAILABLE FOR</span>
+                                <span class="stat-status"><span class="pulse-dot"></span>WORK</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hover Preview Layer -->
+                    <div id="hover-preview"></div>
+
+                </div>
+                <!-- Monitor Stand & Base -->
+                <div class="stand"></div>
+                <div class="base"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="index.js"></script>
 </body>
 </html>

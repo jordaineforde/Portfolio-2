@@ -1,242 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>My CV | Jordaine Forde</title>
-	<!-- Universal stylesheet -->
-	<link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My CV | Jordaine Forde</title>
+
+    <!-- 1. Load Google Fonts first -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&family=Syne:wght@700&display=swap" rel="stylesheet">
+
+    <!-- 2. Load stylesheet immediately after fonts to prevent messy loading / FOUC -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <!-- 3. Preload background image -->
+    <link rel="preload" as="image" href="background-waves.jpg">
 </head>
 <body>
-<!-- CV page styled like a social media feed while  -->
-	<div class="tab-window">
-<!--Navigation tabs -->
-		<div class="page-tabs">
-			<a href="index.html" class="tabs">Home</a>
-			<a href="lab_projects.html" class="tabs">Projects</a>
-			<a href="contact.html" class="tabs">Contact</a>
-			<a href="about_me.html" class="tabs">About Me</a>
-			<a href="my_cv.html" class="tabs active">My CV</a>
-		</div>
-		<!--URL bar- reflects computer theme-->
-		<div class="url-bar">
-			<span class="url">www.jordaineforde.com/cv</span> 
-		</div>
-		<!--social media layout styling-->
-		<div class="screen-page">
-			<h1 class="page-heading">My CV</h1>
-		<!--Page layout - https://css-tricks.com/snippets/css/complete-guide-grid/ -->
-			<div class="page-layout">
-				<!--CV post/updates-->
-				<div class="two-column">
 
-					<!-- Education section Introduction - built using div containers from https://developer.mozilla.org/en-US/docs/Web/HTML/Element/div-->
-					<div class="post-content">
-						<div class="post-header-content">
-							<!-- Circle icon with initials (profile picture)-->
-							<div class="post-icon">JF</div>
-							<div class="name-date-post-wrapper">
-								<div class="post-name">Jordaine Forde</div>
+    <div class="tab-window">
+        <!-- Navigation tabs -->
+        <div class="page-tabs">
+            <a href="index.html" class="tabs">Home</a>
+            <a href="about_me.html" class="tabs">About Me</a>
+            <a href="lab_projects.html" class="tabs">Projects</a>
+            <a href="my_cv.html" class="tabs active">CV</a>
+            <a href="contact.html" class="tabs">Contact</a>
+        </div>
 
-								<div class="post-date">18 April 2026</div>
-							</div>
-							<span class="type-tag">🎓 Education</span>
-						</div>
-           
+        <!-- Screen page content -->
+        <div class="screen-page">
+            <h1 class="page-title">My CV</h1>
+            <p class="page-subtitle">Professional experience, education, skills, and interests</p>
 
-<div class="edu-entry">
-  <h4 class="edu-title">BSc Computing — First Year</h4>
-  <p class="edu-details">University of Greenwich <span class="edu-date">• (2025 - Present)</span></p>
-</div>
+            <!-- Page Layout Container (Grid Layout) -->
+            <div class="page-layout">
 
-<div class="edu-entry">
-  <h4 class="edu-title">Creative Industries — Pass</h4>
-  <p class="edu-details">Catch 22 / TikTok Creative Academy <span class="edu-date">• (2023 - 2024)</span></p>
-</div>
+                <!-- 1. Education Card -->
+                <div class="content-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                        <span style="font-size: 0.8rem; font-weight: 600; color: var(--accent);">Academic Background</span>
+                        <span style="background: rgba(168, 85, 247, 0.15); color: #e9d5ff; padding: 2px 10px; border-radius: 999px; font-size: 0.75rem;">🎓 Education</span>
+                    </div>
+                    <h2 style="font-family: var(--display); font-size: 1.15rem; font-weight: 700; margin-bottom: 16px; color: var(--text);">Education & Qualifications</h2>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 16px;">
+                        <div class="edu-entry">
+                            <h4 class="edu-title" style="color: var(--text); font-weight: 600; font-size: 0.95rem; margin-bottom: 2px;">BSc Computing — First Year</h4>
+                            <p class="edu-details" style="color: var(--muted); font-size: 0.85rem;">University of Greenwich <span class="edu-date" style="color: var(--accent);">• (2025 - Present)</span></p>
+                        </div>
 
-<div class="edu-entry">
-  <h4 class="edu-title">Fundamentals of Digital Marketing</h4>
-  <p class="edu-details">Google Digital Garage — Certificate ID: GAR VW9 Y4Y <span class="edu-date">• (2023)</span></p>
-</div>
+                        <div class="edu-entry">
+                            <h4 class="edu-title" style="color: var(--text); font-weight: 600; font-size: 0.95rem; margin-bottom: 2px;">Creative Industries — Pass</h4>
+                            <p class="edu-details" style="color: var(--muted); font-size: 0.85rem;">Catch 22 / TikTok Creative Academy <span class="edu-date" style="color: var(--accent);">• (2023 - 2024)</span></p>
+                        </div>
 
-<div class="edu-entry">
-  <h4 class="edu-title">RSL Subsidiary Diploma Level 3 — Merit</h4>
-  <p class="edu-details">Access Creative College <span class="edu-date">• (2018 - 2020)</span></p>
-</div>
+                        <div class="edu-entry">
+                            <h4 class="edu-title" style="color: var(--text); font-weight: 600; font-size: 0.95rem; margin-bottom: 2px;">Fundamentals of Digital Marketing</h4>
+                            <p class="edu-details" style="color: var(--muted); font-size: 0.85rem;">Google Digital Garage — Certificate ID: GAR VW9 Y4Y <span class="edu-date" style="color: var(--accent);">• (2023)</span></p>
+                        </div>
 
-<div class="edu-entry">
-  <h4 class="edu-title">Creative Media Level 3 — Merit</h4>
-  <p class="edu-details">New City College <span class="edu-date">• (2017 - 2018)</span></p>
-</div>
-						<!--Interactive social media buttons (Like comment and share) - https://www.w3schools.com/tags/tag_button.asp-->
-						<div class="interact-post">
-							<button class="post-button">👍 Like</button>
-							<button class="post-button">💬 Comment</button>
-							<button class="post-button">🔗 Share</button>
-						</div>
-					</div>
-				
-					<!-- Work Experience section-->
-					<div class="post-content">
-						<div class="post-header-content">
-							<!-- Circle icon with initials (profile picture)-->
-							<div class="post-icon">JF</div>
-							<div class="name-date-post-wrapper">
-								<div class="post-name">Jordaine Forde</div>
+                        <div class="edu-entry">
+                            <h4 class="edu-title" style="color: var(--text); font-weight: 600; font-size: 0.95rem; margin-bottom: 2px;">RSL Subsidiary Diploma Level 3 — Merit</h4>
+                            <p class="edu-details" style="color: var(--muted); font-size: 0.85rem;">Access Creative College <span class="edu-date" style="color: var(--accent);">• (2018 - 2020)</span></p>
+                        </div>
 
-								<div class="post-date">18 April 2026</div>
-							</div>
-							<span class="type-tag">💼 Work Experience</span>
-						</div>
-            
+                        <div class="edu-entry">
+                            <h4 class="edu-title" style="color: var(--text); font-weight: 600; font-size: 0.95rem; margin-bottom: 2px;">Creative Media Level 3 — Merit</h4>
+                            <p class="edu-details" style="color: var(--muted); font-size: 0.85rem;">New City College <span class="edu-date" style="color: var(--accent);">• (2017 - 2018)</span></p>
+                        </div>
+                    </div>
+                </div>
 
+                <!-- 2. Work Experience Card -->
+                <div class="content-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                        <span style="font-size: 0.8rem; font-weight: 600; color: var(--accent);">Professional History</span>
+                        <span style="background: rgba(168, 85, 247, 0.15); color: #e9d5ff; padding: 2px 10px; border-radius: 999px; font-size: 0.75rem;">💼 Work Experience</span>
+                    </div>
+                    <h2 style="font-family: var(--display); font-size: 1.15rem; font-weight: 700; margin-bottom: 16px; color: var(--text);">Work Experience</h2>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 14px;">
+                        <div class="job-entry">
+                            <h4 class="job-role" style="color: var(--text); font-weight: 600; font-size: 0.95rem; margin-bottom: 2px;">Cocktail Bartender</h4>
+                            <p class="job-details" style="color: var(--muted); font-size: 0.85rem;">Bar Brothers / Goldmills Event Agencies <span class="job-date" style="color: var(--accent);">• (2023 - Present)</span></p>
+                        </div>
 
-<div class="job-entry">
-  <h4 class="job-role">Cocktail Bartender</h4>
-  <p class="job-details">Bar Brothers / Goldmills Event Agencies <span class="job-date">• (2023 - Present)</span></p>
-</div>
+                        <div class="job-entry">
+                            <h4 class="job-role" style="color: var(--text); font-weight: 600; font-size: 0.95rem; margin-bottom: 2px;">Blog Writer</h4>
+                            <p class="job-details" style="color: var(--muted); font-size: 0.85rem;">Every Little Step <span class="job-date" style="color: var(--accent);">• (2023 - Present)</span></p>
+                        </div>
 
-<div class="job-entry">
-  <h4 class="job-role">Blog Writer</h4>
-  <p class="job-details">Every Little Step <span class="job-date">• (2023 - Present)</span></p>
-</div>
+                        <div class="job-entry">
+                            <h4 class="job-role" style="color: var(--text); font-weight: 600; font-size: 0.95rem; margin-bottom: 2px;">Supervising Bartender</h4>
+                            <p class="job-details" style="color: var(--muted); font-size: 0.85rem;">Simmons <span class="job-date" style="color: var(--accent);">• (2021 - 2022)</span></p>
+                        </div>
 
-<div class="job-entry">
-  <h4 class="job-role">Supervising Bartender</h4>
-  <p class="job-details">Simmons <span class="job-date">• (2021 - 2022)</span></p>
-</div>
+                        <div class="job-entry">
+                            <h4 class="job-role" style="color: var(--text); font-weight: 600; font-size: 0.95rem; margin-bottom: 2px;">Social Media Consultant</h4>
+                            <p class="job-details" style="color: var(--muted); font-size: 0.85rem;">Rival Kit Sportswear <span class="job-date" style="color: var(--accent);">• (2021 - 2022)</span></p>
+                        </div>
 
-<div class="job-entry">
-  <h4 class="job-role">Social Media Consultant</h4>
-  <p class="job-details">Rival Kit Sportswear <span class="job-date">• (2021 - 2022)</span></p>
-</div>
+                        <div class="job-entry">
+                            <h4 class="job-role" style="color: var(--text); font-weight: 600; font-size: 0.95rem; margin-bottom: 2px;">Supervising Bartender</h4>
+                            <p class="job-details" style="color: var(--muted); font-size: 0.85rem;">Claw and Hammer <span class="job-date" style="color: var(--accent);">• (2019 - 2021)</span></p>
+                        </div>
 
-<div class="job-entry">
-  <h4 class="job-role">Supervising Bartender</h4>
-  <p class="job-details">Claw and Hammer <span class="job-date">• (2019 - 2021)</span></p>
-</div>
+                        <div class="job-entry">
+                            <h4 class="job-role" style="color: var(--text); font-weight: 600; font-size: 0.95rem; margin-bottom: 2px;">Bartender / Cloak Room Staff</h4>
+                            <p class="job-details" style="color: var(--muted); font-size: 0.85rem;">Jazz Cafe <span class="job-date" style="color: var(--accent);">• (2018 - 2019)</span></p>
+                        </div>
 
-<div class="job-entry">
-  <h4 class="job-role">Bartender / Cloak Room Staff</h4>
-  <p class="job-details">Jazz Cafe <span class="job-date">• (2018 - 2019)</span></p>
-</div>
+                        <div class="job-entry">
+                            <h4 class="job-role" style="color: var(--text); font-weight: 600; font-size: 0.95rem; margin-bottom: 2px;">Digital Media Assistant</h4>
+                            <p class="job-details" style="color: var(--muted); font-size: 0.85rem;">Trieu Nails London <span class="job-date" style="color: var(--accent);">• (2017 - 2018)</span></p>
+                        </div>
 
-<div class="job-entry">
-  <h4 class="job-role">Digital Media Assistant</h4>
-  <p class="job-details">Trieu Nails London <span class="job-date">• (2017 - 2018)</span></p>
-</div>
+                        <div class="job-entry">
+                            <h4 class="job-role" style="color: var(--text); font-weight: 600; font-size: 0.95rem; margin-bottom: 2px;">Digital Media Apprentice</h4>
+                            <p class="job-details" style="color: var(--muted); font-size: 0.85rem;">Bl-nk <span class="job-date" style="color: var(--accent);">• (2016 - 2017)</span></p>
+                        </div>
+                    </div>
+                </div>
 
-<div class="job-entry">
-  <h4 class="job-role">Digital Media Apprentice</h4>
-  <p class="job-details">Bl-nk <span class="job-date">• (2016 - 2017)</span></p>
-</div>
+                <!-- 3. Skills Card -->
+                <div class="content-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                        <span style="font-size: 0.8rem; font-weight: 600; color: var(--accent);">Technical & Soft Skills</span>
+                        <span style="background: rgba(168, 85, 247, 0.15); color: #e9d5ff; padding: 2px 10px; border-radius: 999px; font-size: 0.75rem;">💻 Skills</span>
+                    </div>
+                    <h2 style="font-family: var(--display); font-size: 1.15rem; font-weight: 700; margin-bottom: 16px; color: var(--text);">Skills</h2>
+                    
+                    <div class="badge-container">
+                        <span class="badge">Python</span>
+                        <span class="badge">JavaScript</span>
+                        <span class="badge">HTML</span>
+                        <span class="badge">CSS</span>
+                        <span class="badge">Object-Oriented Programming (OOP)</span>
+                        <span class="badge">Tkinter / GUI Development</span>
+                        <span class="badge">Data Management & Analytics</span>
+                        <span class="badge">Business Analysis</span>
+                        <span class="badge">Stakeholder Management</span>
+                        <span class="badge">SEO & Digital Analytics</span>
+                        <span class="badge">Digital Marketing Strategy</span>
+                        <span class="badge">Risk Awareness</span>
+                        <span class="badge">Team Collaboration</span>
+                        <span class="badge">Technical Communication</span>
+                        <span class="badge">Content & Database Management</span>
+                        <span class="badge">Copywriting</span>
+                    </div>
+                </div>
 
-						<!--Interactive social media buttons (Like comment and share) - https://www.w3schools.com/tags/tag_button.asp-->
-						<div class="interact-post">
-							<button class="post-button">👍 Like</button>
-							<button class="post-button">💬 Comment</button>
-							<button class="post-button">🔗 Share</button>
-						</div>
-					</div>
+                <!-- 4. Interests & Hobbies Card -->
+                <div class="content-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                        <span style="font-size: 0.8rem; font-weight: 600; color: var(--accent);">Personal Interests</span>
+                        <span style="background: rgba(168, 85, 247, 0.15); color: #e9d5ff; padding: 2px 10px; border-radius: 999px; font-size: 0.75rem;">🎬 Interests</span>
+                    </div>
+                    <h2 style="font-family: var(--display); font-size: 1.15rem; font-weight: 700; margin-bottom: 16px; color: var(--text);">Interests & Hobbies</h2>
+                    
+                    <div class="badge-container">
+                        <span class="badge">Software Development</span>
+                        <span class="badge">Machine Learning</span>
+                        <span class="badge">AI & Intelligence</span>
+                        <span class="badge">Data Analytics</span>
+                        <span class="badge">Creative Media</span>
+                        <span class="badge">Film</span>
+                        <span class="badge">Character Design / Creation</span>
+                        <span class="badge">Blog Writing</span>
+                        <span class="badge">Marketing</span>
+                        <span class="badge">Music Creation</span>
+                        <span class="badge">Culinary Arts & Cooking</span>
+                    </div>
+                </div>
 
-					<!--Skills section - displays relevant skills-->
-					<div class="post-content">
-						<div class="post-header-content">
-							<div class="post-icon">JF</div>
-							<div class="name-date-post-wrapper">
-								<div class="post-name">Jordaine Forde</div>
-								<div class="post-date">18 April 2026</div>
-							</div>
-							<span class="type-tag">💻 Skills</span>
-						</div>
-						<h2>Skills</h2>
-						<div class="badge-container">
-  <!-- Programming & Tech -->
-  <span class="badge">Python</span>
-  <span class="badge">JavaScript</span>
-  <span class="badge">HTML</span>
-  <span class="badge">CSS</span>
-  <span class="badge">Object-Oriented Programming (OOP)</span>
-  <span class="badge">Tkinter / GUI Development</span>
-  <span class="badge">Data Management & Analytics</span>
-  
-  <!-- Business & Strategy -->
-  <span class="badge">Business Analysis</span>
-  <span class="badge">Stakeholder Management</span>
-  <span class="badge">SEO & Digital Analytics</span>
-  <span class="badge">Digital Marketing Strategy</span>
-  <span class="badge">Risk Awareness</span>
+                <!-- 5. Download CV Callout Card (Full Width) -->
+                <div class="content-card full-width" style="display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 32px;">
+                    <div style="font-size: 2.5rem; margin-bottom: 12px;">📄</div>
+                    <h2 style="font-family: var(--display); font-size: 1.25rem; margin-bottom: 8px; color: var(--text);">Want a copy of my CV?</h2>
+                    <p style="color: var(--muted); font-size: 0.9rem; margin-bottom: 20px;">Download my full CV document directly to your device.</p>
+                    <a href="JordaineFordeCV.pdf" download class="button-main" style="display: inline-block; text-decoration: none;">Download CV</a>
+                </div>
 
-  <!-- Management & Communication -->
-  <span class="badge">Team Collaboration</span>
-  <span class="badge">Technical Communication</span>
-  <span class="badge">Content & Database Management</span>
-  <span class="badge">Copywriting</span>
-</div>
-						<div class="interact-post">
-							<button class="post-button">👍 Like</button>
-							<button class="post-button">💬 Comment</button>
-							<button class="post-button">🔗 Share</button>
-						</div>
-					</div>
+            </div>
+        </div>
+    </div>
 
-					<!--Interests section - displays hobbies-->
-					<div class="post-content">
-						<div class="post-header-content">
-							<div class="post-icon">JF</div>
-							<div class="name-date-post-wrapper">
-								<div class="post-name">Jordaine Forde</div>
-								<div class="post-date">18 April 2026</div>
-							</div>
-							<span class="type-tag">🎬 Interests</span>
-						</div>
-						<h2>Interests & Hobbies</h2>
-					<div class="badge-container">
-  <span class="badge">Software Development</span>
-  <span class="badge">Machine Learning</span>
-  <span class="badge">AI & Intelligence</span>
-  <span class="badge">Data Analytics</span>
-  <span class="badge">Creative Media</span>
-  <span class="badge">Film</span>
-  <span class="badge">Character Design / Creation</span>
-  <span class="badge">Blog Writing</span>
-  <span class="badge">Marketing</span>
-  <span class="badge">Music Creation</span>
-  <span class="badge">Culinary Arts & Cooking</span>
-</div>
-						<div class="interact-post">
-							<button class="post-button">👍 Like</button>
-							<button class="post-button">💬 Comment</button>
-							<button class="post-button">🔗 Share</button>
-						</div>
-					</div>
-
-				</div>
-
-				<!--Navigation bar-->
-				<div class="nav-bar">
-					<!--Pages-->
-					<div class="nav-side-bar">
-						<h3>Pages</h3>
-						<!--Navigation page links https://www.w3schools.com/html/html_lists.asp-->
-						<ul class="nav-links">
-							<li><a href="index.html">🏠 Home</a></li>
-							<li><a href="about_me.html">👤 About Me</a></li>
-							<li><a href="lab_projects.html">💡 Projects</a></li>
-							<li><a href="contact.html">📬 Contact</a></li>
-						</ul>
-					</div>
-					<!--Download CV-->
-					<div class="nav-side-bar">
-						<h3>Download My CV</h3>
-						<p>Want a copy of my CV?</p>
-						<a href="contact.html" class="navbar-button">Get In Touch</a>
-					</div>
-				</div>
-
-			</div>
-		</div>
-	</div>
-	<script src="script.js"></script>
+    <!-- External JavaScript file -->
+    <script src="script.js"></script>
 </body>
 </html>

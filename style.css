@@ -1,484 +1,244 @@
-/* Dark theme background to match twitter/google dark mode */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #2a0344;
-    margin: 0;
-    padding: 20px;
-    display: flex;
-    justify-content: center;
+
+
+/* ==========================================
+   Modern Purple Glassmorphism Theme (Original)
+   ========================================== */
+
+:root {
+    --display: 'Syne', Arial, sans-serif;
+    --accent: #7c3aed;
+    --lilac: #a78bfa;
+    --text: #eae4eb;
+    --muted: #d1d5db;
+    --glass: rgba(33, 25, 49, 0.55);
+    --glass-line: rgba(255, 255, 255, 0.09);
 }
 
-/* Portfolio tab window - Uses border-radius to craete rounded edges to look like a window browser https://www.w3schools.com/cssref/css3_pr_border-radius.php  */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Page background - rich purple glows combined with background-waves.jpg */
+body {
+    display: block;
+    background:
+        radial-gradient(ellipse 80% 50% at 15% 0%, rgba(168, 85, 247, 0.35), transparent 60%),
+        radial-gradient(ellipse 70% 60% at 100% 45%, rgba(109, 40, 217, 0.45), transparent 65%),
+        radial-gradient(ellipse 60% 50% at 30% 100%, rgba(76, 29, 149, 0.6), transparent 70%),
+        url('background-waves.jpg'),
+        #1a0630;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: var(--text);
+    padding: 20px;
+}
+
+/* Hide old URL bar rules completely */
+.url-bar, .url {
+    display: none !important;
+}
+
+/* Main window frame */
 .tab-window {
     width: 100%;
-    max-width: 1200px;
-    background-color: #f4f2f6;
-    border-radius: 12px;
+    max-width: 1100px;
+    background-color: rgba(16, 12, 24, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(168, 85, 247, 0.25);
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+    margin: 0 auto;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
-/* Browser(Navigation) tabs - Spreads the tabs across the page like a browser https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
+/* Navigation tabs */
 .page-tabs {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
     gap: 4px;
-    padding: 10px 16px 0;
-    background-color: #2a0344;
+    padding: 10px;
+    background-color: #14101c;
+    border-bottom: 1px solid var(--glass-line);
 }
-/* Tab bar - Uses border radius to create rounded edges to give the appearance of a tabs on a search bar */
+
 .tabs {
-    padding: 8px 16px;
-    border-radius: 8px 8px 0 0;
-    font-size: 0.85rem;
-    color: #96969f;
-    background-color: #2c282e;
+    text-align: center;
     text-decoration: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    background-color: #1c1826;
+    color: #96969f;
+    font-size: 0.85rem;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: all 0.2s ease;
 }
-/* Tab Hover and Active - when user hovers/clicks the tab changes colour and also shows a light grey background so the user is aware of which page they are on https://www.w3schools.com/cssref/sel_hover.php */
+
 .tabs:hover {
-    color: #eae4eb;
-    background-color: #ad75a3;
+    color: var(--text);
+    background-color: #2a2140;
 }
 
 .tabs.active {
-    color: #1c1e21;
-    background-color: #b8b4b8;
+    color: #ffffff;
+    font-weight: 700;
+    background-color: #2a2140;
+    box-shadow: inset 0 -2px 0 var(--accent);
 }
 
-/* URL Address bar - uses 'display:flex' to keep text within the address bar https://css-tricks.com/snippets/css/a-guide-to-flexbox/  */
-.url-bar {
+/* Pill-shaped search bar */
+.search-bar {
     display: flex;
-    padding: 8px 16px;
-    background-color: #2c282e;
-    border-bottom: 1px solid #e4e6ea;
+    align-items: center;
+    max-width: 560px;
+    width: calc(100% - 48px);
+    margin: 20px auto 0;
+    padding: 0 18px;
+    background-color: #14101c;
+    border: 1px solid rgba(168, 85, 247, 0.25);
+    border-radius: 999px;
 }
-/*Text - uses border radius and padding to create a rectangular shape with rounded edged to give the effect of a url address bar https://www.w3schools.com/howto/howto_css_searchbar.asp 
-https://www.w3schools.com/cssref/css3_pr_border-radius.php */
-.url {
-    background-color: #3a3a4a;
-    color: #aaaacc;
-    font-size: 0.82rem;
-    padding: 5px 14px;
-    border-radius: 20px;
+
+.search-bar input {
+    flex: 1;
+    background: none;
+    border: none;
+    outline: none;
+    color: var(--text);
+    font-size: 0.9rem;
+    padding: 14px 0;
+}
+
+.search-bar:focus-within {
+    border-color: var(--accent);
+    box-shadow: 0 0 18px rgba(124, 58, 237, 0.35);
+}
+
+/* Screen area */
+.screen-page {
+    background: transparent;
+    padding: 24px;
+    flex: 1;
+}
+
+/* Page titles and headers */
+.page-title {
+    text-align: center;
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: clamp(2rem, 6vw, 3.2rem);
+    color: #c084fc;
+    margin: 28px 0 4px;
+}
+
+.page-subtitle {
+    text-align: center;
+    color: var(--muted);
+    margin-bottom: 24px;
+    font-size: 0.95rem;
+}
+
+/* 2-Column Grid Layout with Centered Full-Width Bottom Card */
+.page-layout {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
     width: 100%;
 }
 
-/* light bluish-grey backround in between the tabs and white squares which mimics a social media page*/
-.screen-page {
-    background-color: #8191aa;
-    min-height: 600px;
+.page-layout > .content-card {
+    width: 100%;
 }
 
-/* White border box - keeps content sperated and organised  */
-.forum-box {
-    background-color: #ffffff;
-    border-bottom: 1px solid #e4e6ea;
+.page-layout > .content-card.full-width {
+    grid-column: 1 / -1;
+    max-width: 500px;
+    justify-self: center;
+    width: 100%;
 }
 
-/* Banner - mimics the banners or cover photos on facebook pages */
-.banner {
-    height: 120px;
-    background-color: #633798;
-}
-
-/* User profile info row - uses flexbox tokeeps the icon, profile tags, names and content in line with each other */
-.user-profile {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    padding: 0 20px 16px;
-    flex-wrap: wrap;
-}
-
-/*  Initials Icon - acts as a profile picture*/
-.icon {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%; /*creates a circular shape similar to a facebopok profile picture */
-    background-color: #1877f2;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.6rem;
-    font-weight: 700;
-    border: 4px solid #ffffff;
-    margin-top: -40px; /*creates an overlap with a banner to enhance the profile picture effect */
-}
-/* Main info - name, username and profile tags */
-.main-info {
-    flex: 1;
-    padding-top: 8px;
-}
-/* Styles the name */
-.name-info {
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: #191a1c;
-}
-/* Styles the username */
-.username-info {
-    font-size: 0.85rem;
-    color: #545557;
-    margin: 4px 0 8px;
-}
-
-/* Profile tags - small rounded box with information using flex wrap to push them onto the next line if they don't fit https://www.w3schools.com/howto/howto_css_badge.asp */
-.profile-tags {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-}
-/* Tags styling  - uses boder radius and padding to create the rounded box shape https://www.w3schools.com/cssref/css3_pr_border-radius.php*/
-.tags {
-    background-color: #f7fdf9;
-    color: #0856bd;
-    padding: 3px 10px;
-    border-radius: 20px;
-    font-size: 0.78rem;
-}
-
-/* User statistics - the number at the top right of the "profile", displaying how manny pages, posts creates plus date joined*/
-.user-statistics {
-    display: flex; /*keep the number above the text */
-    gap: 20px; /*adds space between each statistic */
-}
-
-.statistic {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-/* Bold numbers above text */
-.statistic strong {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: #1c1e21;
-}
-/* Text below the numbers */
-.statistic span {
-    font-size: 0.75rem;
-    color: #65676b;
-}
-
-/* Columns - creates two columns, dividing the profile posts and nav-bar https://css-tricks.com/snippets/css/complete-guide-grid*/
-.page-layout {
-    display: grid;
-    grid-template-columns: 1fr 260px;
-    gap: 16px;
-    padding: 16px;
-    background-color: #95a0b2;
-}
-
-/* Posts - keeps the posts vertically aligned, on top of each other */
-.two-column {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-/* Post content - white box with rounded edges and grey line (similar to a social media post) */
-.post-content {
-    background-color: #ffffff;
-    border: 1px solid #e4e6ea;
-    border-radius: 12px;
-    padding: 20px;
-}
-
-/* Post header content - keeps icon, anme and tags in line */
-.post-header-content{
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 14px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid #e4e6ea; /*adds a line to seperate the header from the post content */
-}
-
-/* Post icon - circular icon on each individual post https://www.w3schools.com/cssref/css3_pr_border-radius.php */
-.post-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%; /* creates the circle */
-    background-color: #1877f2;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 0.85rem;
-}
-
-/* Wraps the name and date */
-.name-date-post-wrapper {
-    flex: 1; /* fills the space */
-}
-/* Name in post */
-.post-name {
-    font-weight: 600;
-    font-size: 0.9rem;
-    color: #1c1e21;
-}
-/* Date in post */
-.post-date {
-    font-size: 0.78rem;
-    color: #65676b;
-}
-
-/* Tag type - label on post which uses border radius and padding to create the rounded box shape https://www.w3schools.com/howto/howto_css_badge.asp */
-.type-tag {
-    background-color: #e7f3ff;
-    color: #1877f2;
-    padding: 4px 10px;
-    border-radius: 20px;
-    font-size: 0.75rem;
-}
-
-/* Styles the heading on post */
-h2 {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: #1c1e21;
-    margin-bottom: 8px;
-}
-
-/* Body of text on post - styling mimicking social media posts using the colour grey to help balance the layout*/
-p {
-    font-size: 0.9rem;
-    color: #4c515e;
-    line-height: 1.7;
-    margin-bottom: 6px;
-}
-
-/* Post buttons - styles the like, comment and share buttons https://www.w3schools.com/tags/tag_button.asp*/
-.interact-post {
-    display: flex;
-    gap: 4px;
-    padding-top: 12px;
-    border-top: 1px solid #e4e6ea; /*adds a line of spearation between the post content and the buttons */
-    margin-top: 12px
-}
-/* Post button actions including hover - shows a hand when hovering over appropriate buttons and changes colour to show user what they are selecting https://www.w3schools.com/cssref/sel_hover.php */
-.post-button {
-    background: none;
-    border: none;
-    color: #65676b;
-    font-size: 0.85rem;
-    padding: 6px 12px;
-    border-radius: 8px;
-    cursor: pointer;
-}
-/* Post button hover */
-.post-button:hover {
-    background-color: #8fb5d9; /*hover colour*/
-    color: #1877f2;
-}
-
-/* Navigation bar - keeps the navigation links vertically aligned */
-.nav-bar {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-/* Navigation side bar box - white box with rounded edges and grey line to keep the content seperated and organised https://www.w3schools.com/cssref/css3_pr_border-radius.php */
-.nav-side-bar {
-    background-color: #ffffff;
-    border: 1px solid #e4e6ea;
-    border-radius: 12px;
+/* Glass cards / Post content */
+.content-card, .post-content {
+    background: var(--glass);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid var(--glass-line);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
     padding: 16px;
 }
-/* Styles the heading */
-.nav-side-bar h3 {
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: #1c1e21;
-    margin-bottom: 8px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid #e4e6ea;
-}
-/* Styles the text */
-.nav-side-bar p {
-    font-size: 0.88rem;
-    color: #4c515e;
-    margin-bottom: 12px;
+
+/* Diagram frame container for clean images */
+.diagram-frame {
+    background: #f1f0fb;
+    border-radius: 10px;
+    padding: 12px;
 }
 
-/* Navigation nav-bar button - (get in  touch) when clicked takes user to the contact page*/
-.navbar-button {
+.diagram-frame img {
+    width: 100%;
+    height: auto;
     display: block;
-    text-align: center;
-    background-color: #1877f2;
-    color: white;
-    padding: 8px 16px;
-    border-radius: 8px;
-    font-size: 0.88rem;
-    font-weight: 600;
-    text-decoration: none;
-}
-/* Navigation nav-bar button hover - changes colour to show user what they are selecting */
-.navbar-button:hover {
-    background-color: #8fb5d9;
 }
 
-/* Navigation links - https://www.w3schools.com/html/html_lists.asp */
-.nav-links {
-    list-style: none; /*removes set bullet points from list to make it look more like a navigation menu*/
-    padding: 0;
-    margin: 0;
-}
-/* Adds grey line between the links for better readability */
-.nav-links li {
-    border-bottom: 1px solid #d2d7d7;
-}
-/* Removes the grey line from the last link */
-.nav-links li:last-child {
-    border-bottom: none;
-}
-/* Styles the navigation link */
-.nav-links a {
-    display: block;
-    padding: 8px 4px;
-    font-size: 0.88rem;
-    color: #65676b;
-    text-decoration: none;
-}
-/* Navigation link hover - changes colour to show user what they are selecting */
-.nav-links a:hover {
-    color: #8fb5d9;
-}
-
-/* Removes the underline from the links to m ake page look cleaner https://www.w3schools.com/html/html_links.asp  */
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-/* Allows page to adapt to different screen sizes making this responsive design https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries */
-@media (max-width: 768px) {
-    .forum-body {
-        grid-template-columns: 1fr;
-    }
-    .profile-meta {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-}
-/* Contact form - styles and keep everything in and balanced using the same width for all inputs*/
-.form-contact {
-    margin-bottom: 12px;
-}
-
-.form-contact label {
-    display: inline-block;
-    width: 70px;
-    font-weight: 600;
-    font-size: 0.9rem;
-    color: #1c1e21;
-}
-/*Styles the input and textarea */
-.form-contact input,
-.form-contact textarea { 
-    padding: 6px 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-size: 0.9rem;
-    width: 60%;
-    font-family: Arial, sans-serif;
-}
-/*aligns Message textarea to the top of the label */
-.form-contact textarea {
-    vertical-align: top;
-}
-/* contact form error messages styling*/
-.form-error {
-    display: block;
-    margin-left: 70px;
-    color: #c0392b;
-    font-size: 0.8rem;
-}
-.form-success { display: none; color: green; }
-.form-success.show { display: block; }
-/*hides h1 */
-.page-heading {
-    position: absolute;
-    left: -9999px;
-}
-
-
-/* Work Experience Styling */
-.job-entry {
-  margin-bottom: 14px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Use rgba(255, 255, 255, 0.1) if your post background is dark */
-}
-
-.job-entry:last-child {
-  border-bottom: none;
-}
-
-.job-role {
-  font-size: 1.05rem;
-  font-weight: 700;
-  margin: 0 0 2px 0;
-}
-
-.job-details {
-  font-size: 0.9rem;
-  opacity: 0.85;
-  margin: 0;
-}
-
-.job-date {
-  opacity: 0.7;
-  font-size: 0.85rem;
-}
-
-
-
-/* Education Section Styling */
-.edu-entry {
-  margin-bottom: 14px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Subtle divider line */
-}
-
-.edu-entry:last-child {
-  border-bottom: none; /* Removes bottom border from final item */
-}
-
-.edu-title {
-  font-size: 1.05rem;
-  font-weight: 700;
-  margin: 0 0 2px 0;
-}
-
-.edu-details {
-  font-size: 0.9rem;
-  opacity: 0.85;
-  margin: 0;
-}
-
-.edu-date {
-  opacity: 0.7;
-  font-size: 0.85rem;
-}
-
-
-/* Updated Badge / Tag Styles */
+/* Badge container */
 .badge-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px; /* Gives them more breathing room */
-  margin-top: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
 }
 
 .badge {
-  background-color: #e5e7eb; /* Soft light-grey background pill */
-  color: #1f2937; /* Darker, high-contrast text */
-  padding: 8px 16px; /* Increases pill height & width */
-  border-radius: 20px; /* Smooth rounded edges */
-  font-size: 0.95rem; /* Larger, clearer text size */
-  font-weight: 600; /* Medium-bold for pop */
-  border: 1px solid #d1d5db; /* Clean subtle border */
-  display: inline-block;
+    background: rgba(168, 85, 247, 0.15);
+    color: #e9d5ff;
+    border: 1px solid rgba(168, 85, 247, 0.2);
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+/* Main Action Buttons */
+.button-main, .navbar-button {
+    display: inline-block;
+    background-color: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: 999px;
+    padding: 10px 26px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: 0 0 18px rgba(124, 58, 237, 0.5);
+    text-align: center;
+    transition: background 0.2s ease;
+}
+
+.button-main:hover, .navbar-button:hover {
+    background-color: #6d28d9;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .page-layout {
+        grid-template-columns: 1fr;
+    }
+    .page-layout > .content-card.full-width {
+        max-width: 100%;
+    }
+    .page-tabs {
+        grid-template-columns: repeat(5, max-content);
+        overflow-x: auto;
+    }
 }
